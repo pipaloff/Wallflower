@@ -1067,3 +1067,119 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-11 15:34:17
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArtsController#index as HTML
+  [1m[35mArt Load (1.2ms)[0m  SELECT "arts".* FROM "arts"
+  Rendered arts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 89ms (Views: 78.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/arts.css?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/arts.js?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-11 16:52:29 -0500
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 16:52:38 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 16:53:03 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize?code=1046676336" for 127.0.0.1 at 2014-07-11 16:54:13 -0500
+Processing by ArtsController#authorize as HTML
+  Parameters: {"code"=>"1046676336"}
+Redirected to https://www.deviantart.com/oauth2/token
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:00:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/ETLuser/Code/Wallflower/app/controllers/arts_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+      "code="params[:code]
+                   ^
+/Users/ETLuser/Code/Wallflower/app/controllers/arts_controller.rb:12: syntax error, unexpected ')', expecting keyword_end
+/Users/ETLuser/Code/Wallflower/app/controllers/arts_controller.rb:85: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/arts_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+  app/controllers/arts_controller.rb:12: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/arts_controller.rb:85: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.5ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.2ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:01:17 -0500
+Processing by ArtsController#authorize as HTML
+Completed 500 Internal Server Error in 1ms
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/arts_controller.rb:11:in `+'
+  app/controllers/arts_controller.rb:11:in `authorize'
+
+
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered vendor/ruby/2.0.0/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.7ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:01:46 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=http://google.com&code=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:02:34 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=wallflower.herokuapp.comcode=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:03:11 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=wallflower.herokuapp.com&code=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize" for 127.0.0.1 at 2014-07-11 17:03:12 -0500
+Processing by ArtsController#authorize as HTML
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=wallflower.herokuapp.com&code=
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize?code=1672805390" for 127.0.0.1 at 2014-07-11 17:04:24 -0500
+Processing by ArtsController#authorize as HTML
+  Parameters: {"code"=>"1672805390"}
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=wallflower.herokuapp.com&code=1672805390
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
