@@ -8,7 +8,7 @@ class ArtsController < ApplicationController
       "client_id=1479&"+
       "client_secret=ff642ac312683d522fedcb531330d5a0&"+
       "code="+params[:code].to_s+"&"+
-      "redirect_uri=http://wallflower.herokuapp.com/arts/index"
+      "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
   end
 
