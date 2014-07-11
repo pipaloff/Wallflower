@@ -3,9 +3,12 @@
   var oembed_url = 'http://backend.deviantart.com/oembed?url='+url+'&format=jsonp&callback=?';
   $.getJSON(oembed_url, function(data) {
     console.log('Deviation by: ' + data.author_name);
+  $("#my_image").attr("src",data.url);
   });
 </script>
 
+
+<img id="my_image" src="">
 
 <h1>Listing arts TEST</h1>
 
