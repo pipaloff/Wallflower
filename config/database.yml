@@ -9,6 +9,10 @@ default: &default
   pool: 5
   timeout: 5000
   host: localhost
+  port: 15432
+  username: guest
+  password: pwcwelcome1
+  port: <%= ENV["BOXEN_POSTGRESQL_PORT"] || 5432%>
   
 development:
   <<: *default
