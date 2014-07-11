@@ -1183,3 +1183,10 @@ Processing by ArtsController#authorize as HTML
   Parameters: {"code"=>"1672805390"}
 Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=wallflower.herokuapp.com&code=1672805390
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/authorize?code=1046676336" for 127.0.0.1 at 2014-07-11 17:07:14 -0500
+Processing by ArtsController#authorize as HTML
+  Parameters: {"code"=>"1046676336"}
+Redirected to https://www.deviantart.com/oauth2/token?grant_type=authorization_code&client_id=1479&client_secret=ff642ac312683d522fedcb531330d5a0&redirect_uri=http://wallflower.herokuapp.com&code=1046676336
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
