@@ -1,6 +1,10 @@
 class ArtsController < ApplicationController
   before_action :set_art, only: [:show, :edit, :update, :destroy]
 
+  def authorize
+    
+  end
+
   # GET /arts
   # GET /arts.json
   def index
