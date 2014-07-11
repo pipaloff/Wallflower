@@ -1,0 +1,32 @@
+<script>
+  var url = 'http://www.deviantart.com/art/Pokemon-Officer-Jenny-01-461937344'
+  var oembed_url = 'http://backend.deviantart.com/oembed?url='+url+'&format=jsonp&callback=?';
+  $.getJSON(oembed_url, function(data) {
+    console.log('Deviation by: ' + data.author_name);
+  });
+</script>
+
+
+<h1>Listing arts TEST</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arts.each do |art| %>
+      <tr>
+        <td><%= link_to 'Show', art %></td>
+        <td><%= link_to 'Edit', edit_art_path(art) %></td>
+        <td><%= link_to 'Destroy', art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Art', new_art_path %>
