@@ -3,6 +3,7 @@ class ArtsController < ApplicationController
 
   def authorize
     if params[:code]
+      puts "params had code: "+params[:code].to_s
       redirect_to("https://www.deviantart.com/oauth2/token?"+
       "grant_type=authorization_code&"+
       "client_id=1479&"+
@@ -11,8 +12,10 @@ class ArtsController < ApplicationController
       "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
     else
+      puts "params didn't have code: "+params[:code].to_s
       redirect_to("http://pipaloff.deviantart.com/favourites/?"+"access_token="+params[:access_token].to_s      )
     end
+    puts "outside of loop"
   end
 
   # GET /arts
