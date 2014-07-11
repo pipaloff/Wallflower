@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'arts#index'
 
   # Example of regular route:
-    get 'arts/authorize' => 'arts#new'
+  get 'arts/authorize' => 'arts#new'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
