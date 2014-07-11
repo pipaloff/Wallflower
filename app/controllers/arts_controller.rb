@@ -2,14 +2,17 @@ class ArtsController < ApplicationController
   before_action :set_art, only: [:show, :edit, :update, :destroy]
 
   def authorize
-    puts params[:code]
-    redirect_to("https://www.deviantart.com/oauth2/token?"+
+    if params[:code]
+      redirect_to("https://www.deviantart.com/oauth2/token?"+
       "grant_type=authorization_code&"+
       "client_id=1479&"+
       "client_secret=ff642ac312683d522fedcb531330d5a0&"+
       "code="+params[:code].to_s+"&"+
       "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
+    else
+      redirect_to("http://pipaloff.deviantart.com/favourites/?"+"access_token="+params[:access_token].to_s      )
+    end
   end
 
   # GET /arts
