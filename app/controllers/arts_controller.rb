@@ -2,20 +2,22 @@ class ArtsController < ApplicationController
   before_action :set_art, only: [:show, :edit, :update, :destroy]
 
   def authorize
-    if params[:code]
       puts "params had code: "+params[:code].to_s
-      redirect_to("https://www.deviantart.com/oauth2/token?"+
+
+      #pass in the code to get the access token
+      acces_token_response = HTTParty.get("https://www.deviantart.com/oauth2/token?"+
       "grant_type=authorization_code&"+
       "client_id=1479&"+
       "client_secret=ff642ac312683d522fedcb531330d5a0&"+
       "code="+params[:code].to_s+"&"+
       "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
-    else
-      puts "params didn't have code: "+params[:code].to_s
-      redirect_to("http://pipaloff.deviantart.com/favourites/?"+"access_token="+params[:access_token].to_s      )
-    end
-    puts "outside of loop"
+
+      #pass in the access token to get the username
+      username_response = HTTParty.get("https://www.deviantart.com/api/v1/oauth2/user/whoami?"+"access_token="+acces_token_response[:access_token].to_s)
+
+      #pass in the username to access favorites
+      username_response = HTTParty.get("http://"+username_response[:username].to_s+".deviantart.com/favourites/?"+"access_token="+acces_token_response[:access_token].to_s)
   end
 
   # GET /arts
