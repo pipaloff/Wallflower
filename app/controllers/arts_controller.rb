@@ -3,23 +3,21 @@ class ArtsController < ApplicationController
 
   def authorize
 
-      gon.global.code = params[:code]
+      gon.code = params[:code]
       #pass in the code to get the access token
-      gon.global.access_token_response = HTTParty.get("https://www.deviantart.com/oauth2/token?"+
+      gon.access_token_response = HTTParty.get("https://www.deviantart.com/oauth2/token?"+
       "grant_type=authorization_code&"+
       "client_id=1479&"+
       "client_secret=ff642ac312683d522fedcb531330d5a0&"+
-      "code="+gon.global.code.to_s+"&"+
+      "code="+gon.code.to_s+"&"+
       "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
 
-      gon.mytest = gon.global.access_token_response["access_token"]
-
       #pass in the access token to get the username
-      gon.global.username_response = HTTParty.get("https://www.deviantart.com/api/v1/oauth2/user/whoami?"+"access_token="+gon.global.access_token_response["access_token"].to_s)
+      gon.username_response = HTTParty.get("https://www.deviantart.com/api/v1/oauth2/user/whoami?"+"access_token="+gon.access_token_response["access_token"].to_s)
 
       #pass in the username to access favorites
-      # redirect_to("http://"+gon.username_response[:username].to_s+".deviantart.com/favourites/?"+"access_token="+gon.acces_token_response[:access_token].to_s)
+      redirect_to("http://"+gon.username_response["username"].to_s+".deviantart.com/favourites/?"+"access_token="+gon.acces_token_response["access_token"].to_s)
   end
 
   # GET /arts
