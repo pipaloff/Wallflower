@@ -2,14 +2,14 @@ class ArtsController < ApplicationController
   before_action :set_art, only: [:show, :edit, :update, :destroy]
 
   def authorize
-      puts "params had code: "+params[:code].to_s
 
+      gon.global.code = params[:code]
       #pass in the code to get the access token
-      gon.acces_token_response = HTTParty.get("https://www.deviantart.com/oauth2/token?"+
+      gon.global.acces_token_response = HTTParty.get("https://www.deviantart.com/oauth2/token?"+
       "grant_type=authorization_code&"+
       "client_id=1479&"+
       "client_secret=ff642ac312683d522fedcb531330d5a0&"+
-      "code="+params[:code].to_s+"&"+
+      "code="+gon.global.code.to_s+"&"+
       "redirect_uri=http://wallflower.herokuapp.com/authorize"
       )
 
