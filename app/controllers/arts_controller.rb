@@ -14,7 +14,7 @@ class ArtsController < ApplicationController
       )
 
       #pass in the access token to get the username
-      gon.username_response = HTTParty.get("https://www.deviantart.com/api/v1/oauth2/user/whoami?"+"access_token="+gon.acces_token_response[:access_token].to_s)
+      gon.global.username_response = HTTParty.get("https://www.deviantart.com/api/v1/oauth2/user/whoami?"+"access_token="+gon.global.acces_token_response[:access_token].to_s)
 
       #pass in the username to access favorites
       # redirect_to("http://"+gon.username_response[:username].to_s+".deviantart.com/favourites/?"+"access_token="+gon.acces_token_response[:access_token].to_s)
