@@ -41,4 +41,5 @@ gem 'spring',        group: :development
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 gem 'httparty'
+gem 'gon'
 
